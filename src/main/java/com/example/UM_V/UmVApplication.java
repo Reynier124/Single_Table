@@ -53,10 +53,18 @@ public class UmVApplication {
 					.sueldo(new BigDecimal("123.45"))
 					.build();
 
+			Profesor pro2 = Profesor.builder()
+					.nombre("Roberto")
+					.apellido("Rodriguez")
+					.fechaIngreso(LocalDate.of(2020, 3, 28))
+					.cantHijos(0)
+					.titulo(Titulos.INGENIERO)
+					.sueldo(new BigDecimal("678.34"))
+					.build();
+
 			// Lo grabo a través del repositorio de Spring
 			profesorRepository.save(pro1);
-
-			profesorRepository.save(pro1);
+			profesorRepository.save(pro2);
 
 			Alumno al1 = Alumno.builder()
 					.nombre("Marcelo")
@@ -65,8 +73,16 @@ public class UmVApplication {
 					.especialidad(Especialidades.BACHILLER)
 					.build();
 
+			Alumno al2 = Alumno.builder()
+					.nombre("Carolina")
+					.apellido("Lucero")
+					.legajo(89334)
+					.especialidad(Especialidades.PERITO_MERCANTIL)
+					.build();
+
 			// Lo grabo a través del repositorio de Spring
 			alumnoRepository.save(al1);
+			alumnoRepository.save(al2);
 		};
 	};
 
